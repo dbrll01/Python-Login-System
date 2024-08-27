@@ -17,7 +17,9 @@ Clone the repository:
 Copiar código
 git clone https://github.com/your-username/simple-python-login-system.git
 cd simple-python-login-system
+
 Run the script:
+python3 login_system.py 
 
 Notes
 Passwords are stored as SHA-256 hashes to enhance security. However, this is a basic implementation and should not be used in production without additional security measures.
