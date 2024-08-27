@@ -1,0 +1,45 @@
+import hashlib
+import getpass
+from random import choice
+
+passwworld_manager = {}
+
+
+def creat_account():
+  username = input("Enter your username:")
+  password = getpass.getpass("Enter your password:")
+  hashed_password = hashlib.sha256(password.encode()).hexdigest()
+  passwworld_manager[username] = hashed_password
+  print("Account created successfully!")
+
+
+def login():
+  username = input("Enter your username:")
+  password = getpass.getpass("Enter your password:")
+  hashed_password = hashlib.sha256(password.encode()).hexdigest()
+  if username in passwworld_manager and passwworld_manager[
+      username] == hashed_password:
+    print("login sucessfull")
+  elif username in passwworld_manager:
+    print("login failed, incorrect password")
+  else:
+    print("login failed, account does not exist")
+
+
+def main():
+  while True:
+    choice = input(
+        "Enter 1 to create an account, 2 to  login, or 0 to exit: \n ")
+
+    if choice == '1':
+      creat_account()
+    elif choice == '2':
+      login()
+    elif choice == '0':
+      break
+    else:
+      print("Invalid choice")
+
+
+if __name__ == '__main__':
+  main()
