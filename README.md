@@ -1,5 +1,5 @@
 # Python-Login-System
-Python Login System V1
+Python Login System V1 -
 This project is a simple command-line-based login system implemented in Python. It allows users to create an account and securely log in using a username and password.
 
 Features:
